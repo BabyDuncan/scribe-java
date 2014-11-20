@@ -1,35 +1,32 @@
 package org.scribe.model;
 
-import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
 
-import org.junit.*;
+import static org.junit.Assert.assertEquals;
 
-public class OAuthRequestTest
-{
+public class OAuthRequestTest {
 
-  private OAuthRequest request;
+    private OAuthRequest request;
 
-  @Before
-  public void setup()
-  {
-    request = new OAuthRequest(Verb.GET, "http://example.com");
-  }
+    @Before
+    public void setup() {
+        request = new OAuthRequest(Verb.GET, "http://example.com");
+    }
 
-  @Test
-  public void shouldAddOAuthParamters()
-  {
-    request.addOAuthParameter(OAuthConstants.TOKEN, "token");
-    request.addOAuthParameter(OAuthConstants.NONCE, "nonce");
-    request.addOAuthParameter(OAuthConstants.TIMESTAMP, "ts");
-    request.addOAuthParameter(OAuthConstants.SCOPE, "feeds");
-    request.addOAuthParameter(OAuthConstants.REALM, "some-realm");
+    @Test
+    public void shouldAddOAuthParamters() {
+        request.addOAuthParameter(OAuthConstants.TOKEN, "token");
+        request.addOAuthParameter(OAuthConstants.NONCE, "nonce");
+        request.addOAuthParameter(OAuthConstants.TIMESTAMP, "ts");
+        request.addOAuthParameter(OAuthConstants.SCOPE, "feeds");
+        request.addOAuthParameter(OAuthConstants.REALM, "some-realm");
 
-    assertEquals(5, request.getOauthParameters().size());
-  }
+        assertEquals(5, request.getOauthParameters().size());
+    }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void shouldThrowExceptionIfParameterIsNotOAuth()
-  {
-    request.addOAuthParameter("otherParam", "value");
-  }
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionIfParameterIsNotOAuth() {
+        request.addOAuthParameter("otherParam", "value");
+    }
 }
