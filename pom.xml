@@ -23,41 +23,10 @@
         <developer>
             <id>babyduncan</id>
             <name>guohaozhao</name>
-            <email>guohaozhao116008@sohu-inc.com</email>
+            <email>babyduncan@qq.com</email>
             <timezone>+8</timezone>
         </developer>
     </developers>
-
-
-    <repositories>
-        <repository>
-            <id>Nexus</id>
-            <name>Nexus Public Repository</name>
-            <url>http://dev.nrcp.sohu.com/nexus/content/groups/public</url>
-        </repository>
-        <repository>
-            <id>nexus-snapshots</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>http://dev.nrcp.sohu.com/nexus/content/repositories/snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>nexus-releases</id>
-            <name>Nexus Release Repository</name>
-            <url>http://dev.nrcp.sohu.com/nexus/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>http://dev.nrcp.sohu.com/nexus/content/repositories/snapshots</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-    </distributionManagement>
 
     <dependencies>
         <dependency>
